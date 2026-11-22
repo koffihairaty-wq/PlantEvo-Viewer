@@ -1,0 +1,583 @@
+/* Réglages généraux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-image: linear-gradient(rgba(0, 35, 15, 0.40), rgba(0, 35, 15, 0.55)), url("../images/fond-accueil.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+a {
+    text-decoration: none;
+}
+/* En-tête et logos */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 3%;
+    background-color: rgba(0, 35, 15, 0.30);
+}
+.logos {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.logos img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+nav a {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+nav a:hover {
+    color: #c5f542;
+}
+/* Présentation */
+.accueil {
+    text-align: center;
+    padding: 65px 20px 45px;
+}
+.surtitre {
+    font-size: 15px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+.accueil h1 {
+    font-size: 54px;
+    line-height: 1.15;
+    max-width: 1050px;
+    margin: 0 auto 25px;
+}
+.accueil h1 span {
+    display: block;
+    color: #c5f542;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 68px;
+}
+.description {
+    max-width: 830px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.6;
+}
+/* Boutons */
+.boutons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 30px;
+}
+.boutons a {
+    padding: 16px 28px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.bouton-vert {
+    background-color: #c5f542;
+    color: #173b13;
+}
+.bouton-contour {
+    border: 2px solid white;
+    color: white;
+    background-color: rgba(0, 30, 10, 0.30);
+}
+.boutons a:hover {
+    background-color: white;
+    color: #173b13;
+}
+/* Six groupes végétaux */
+.collections {
+    padding: 25px 3% 35px;
+    text-align: center;
+}
+.collections h2 {
+    font-size: 25px;
+    margin-bottom: 22px;
+}
+.grille {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 12px;
+}
+.carte {
+    display: block;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    border-radius: 16px;
+    color: white;
+    background-color: rgba(0, 35, 15, 0.80);
+}
+.carte img {
+    display: block;
+    width: 100%;
+    height: 165px;
+    object-fit: cover;
+}
+.carte h3 {
+    font-size: 15px;
+    padding: 12px 5px;
+}
+.carte:hover {
+    border-color: #c5f542;
+}
+/* Objectifs pédagogiques */
+.objectifs {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 15px 3% 35px;
+    padding: 22px;
+    text-align: center;
+    background-color: rgba(0, 35, 15, 0.65);
+    border-radius: 18px;
+}
+.objectifs h3 {
+    color: #c5f542;
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+.objectifs p {
+    font-size: 15px;
+}
+/* Pied de page */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    background-color: rgba(0, 25, 10, 0.70);
+}
+/* Tablettes */
+@media (max-width: 1100px) {
+    header {
+        flex-direction: column;
+    }
+    nav {
+        justify-content: center;
+    }
+    .grille {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+/* Téléphones */
+@media (max-width: 600px) {
+    body {
+        background-attachment: scroll;
+    }
+    header {
+        padding: 15px;
+    }
+    .logos img {
+        width: 55px;
+        height: 55px;
+    }
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+    nav a {
+        font-size: 13px;
+    }
+    .accueil {
+        padding: 45px 15px 30px;
+    }
+    .surtitre {
+        font-size: 12px;
+    }
+    .accueil h1 {
+        font-size: 32px;
+    }
+    .accueil h1 span {
+        font-size: 42px;
+    }
+    .description {
+        font-size: 15px;
+    }
+    .boutons a {
+        font-size: 14px;
+        padding: 14px 20px;
+    }
+    .collections h2 {
+        font-size: 21px;
+    }
+    .grille {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+    .carte img {
+        height: 125px;
+    }
+    .carte h3 {
+        font-size: 13px;
+    }
+    .objectifs {
+        flex-direction: column;
+    }
+}
+
+/* PAGE COLLECTIONS */
+.intro-collections {
+    text-align: center;
+    padding: 50px 20px 30px;
+}
+.intro-collections h1 {
+    font-size: 48px;
+    margin: 15px 0;
+}
+.intro-collections h1 span {
+    color: #c5f542;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+.intro-collections p {
+    max-width: 850px;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 1.6;
+}
+.intro-collections .surtitre {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #c5f542;
+}
+/* Grille des six collections */
+.liste-collections {
+    padding: 20px 3% 40px;
+}
+.grille-collections {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+/* Cartes végétales */
+.fiche-collection {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 18px;
+    background-color: rgba(0, 35, 15, 0.85);
+}
+.fiche-collection img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+.contenu-fiche {
+    padding: 20px;
+}
+.contenu-fiche h2 {
+    color: #c5f542;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+.contenu-fiche p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+.contenu-fiche a {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 11px 18px;
+    border-radius: 25px;
+    background-color: #c5f542;
+    color: #173b13;
+    font-size: 14px;
+    font-weight: bold;
+}
+.contenu-fiche a:hover {
+    background-color: white;
+}
+/* Bouton de retour */
+.retour {
+    text-align: center;
+    margin: 10px 0 40px;
+}
+.retour a {
+    display: inline-block;
+    padding: 13px 25px;
+    border: 2px solid white;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+}
+.retour a:hover {
+    background-color: #c5f542;
+    border-color: #c5f542;
+    color: #173b13;
+}
+/* Version tablette */
+@media (max-width: 900px) {
+    .grille-collections {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+/* Version téléphone */
+@media (max-width: 600px) {
+    .intro-collections {
+        padding: 35px 15px 20px;
+    }
+    .intro-collections h1 {
+        font-size: 32px;
+    }
+    .intro-collections p {
+        font-size: 15px;
+    }
+    .grille-collections {
+        grid-template-columns: 1fr;
+    }
+    .fiche-collection img {
+        height: 200px;
+    }
+    .contenu-fiche h2 {
+        font-size: 21px;
+    }
+}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Algues - PlantEvo Viewer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+/* PAGE ALGUES - FICHE BOTANIQUE */
+.intro-plante {
+    text-align: center;
+    padding: 45px 20px 30px;
+}
+.intro-plante h1 {
+    font-size: 52px;
+    margin: 12px 0 20px;
+}
+.intro-plante h1 span {
+    color: #c5f542;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+.intro-plante p {
+    max-width: 850px;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 1.6;
+}
+.intro-plante .surtitre {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #c5f542;
+}
+/* Photographie principale */
+.photo-principale {
+    width: 90%;
+    max-width: 1050px;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+.photo-principale img {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+}
+.photo-principale p {
+    margin-top: 10px;
+    font-size: 13px;
+    font-style: italic;
+}
+/* Caractéristiques botaniques */
+.details-plante {
+    padding: 20px 4% 35px;
+}
+.details-plante h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+.grille-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+.bloc-detail {
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 35, 15, 0.85);
+}
+.bloc-detail h3 {
+    color: #c5f542;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+.bloc-detail p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+/* Importance écologique */
+.importance-plante {
+    margin: 10px 4% 35px;
+    padding: 28px;
+    border-radius: 20px;
+    background-color: rgba(0, 35, 15, 0.75);
+    text-align: center;
+}
+.importance-plante h2 {
+    color: #c5f542;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+.importance-plante p {
+    max-width: 850px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.7;
+}
+/* Navigation entre groupes */
+.navigation-plante {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0 45px;
+}
+.navigation-plante a {
+    display: inline-block;
+    padding: 14px 24px;
+    border: 2px solid white;
+    border-radius: 30px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+.navigation-plante a:hover {
+    background-color: #c5f542;
+    border-color: #c5f542;
+    color: #173b13;
+}
+/* Adaptation aux téléphones */
+@media (max-width: 600px) {
+    .intro-plante {
+        padding: 35px 15px 20px;
+    }
+    .intro-plante h1 {
+        font-size: 34px;
+    }
+    .intro-plante p {
+        font-size: 15px;
+    }
+    .photo-principale {
+        width: 94%;
+    }
+    .photo-principale img {
+        height: 240px;
+    }
+    .details-plante h2 {
+        font-size: 24px;
+    }
+    .grille-details {
+        grid-template-columns: 1fr;
+    }
+    .bloc-detail {
+        padding: 18px;
+    }
+    .importance-plante {
+        padding: 20px;
+    }
+}
+
+</body>
+</html>
+
+
+/* Illustrations scientifiques des algues */
+.illustrations-algues {
+    padding: 25px 3%;
+    text-align: center;
+}
+.illustrations-algues h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+.grille-illustrations {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+.grille-illustrations figure {
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid white;
+    background-color: rgba(0, 35, 15, 0.85);
+}
+.grille-illustrations img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+    background-color: white;
+}
+.grille-illustrations figcaption {
+    padding: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+@media (max-width: 900px) {
+    .grille-illustrations {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 600px) {
+    .grille-illustrations {
+        grid-template-columns: 1fr;
+    }
+    .grille-illustrations img {
+        height: 250px;
+    }
+}
+
+
+/* Correction de l'affichage de la carte SIG */
+.page-sig {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.carte-sig {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.carte-sig img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
